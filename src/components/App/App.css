@@ -1,0 +1,29 @@
+body {
+  color: white;
+  background: linear-gradient(90deg, #000000 0%, #0f4387 40%, #5fc0ff 80%);
+}
+.container {
+  max-width: 1280px;
+}
+.jumbotron {
+  background: linear-gradient(90deg, #000000 0%, #0f4387 40%, #5fc0ff 80%);
+}
+/* a:hover {
+  color: white;
+  background: #5fc0ff;
+  border-color: #5fc0ff;
+}
+.btn-info:hover {
+  background: #28a6fa;
+  border-color: #28a6fa;
+}
+.btn-info:not(:disabled):not(.disabled):active {
+  background: #0099ff;
+  border-color: #0099ff;
+}
+.btn-info:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+.btn-info:focus {
+  box-shadow: none;
+} */
