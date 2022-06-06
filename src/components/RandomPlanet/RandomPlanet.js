@@ -14,7 +14,10 @@ export default class RandomPlanet extends Component {
   getData = new FetchData();
   componentDidMount() {
     this.fetchPlanet();
-   /*  this.timerID = setInterval(this.fetchPlanet, 3000); */
+    this.timerID = setInterval(this.fetchPlanet, 5000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timerID);
   }
   fetchPlanet = async () => {
     const id = Math.round(Math.random() * 17) + 2;

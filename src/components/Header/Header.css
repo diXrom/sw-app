@@ -8,20 +8,23 @@
   margin: 0;
   padding: .5rem 1rem;
   border-radius: 3px;
+  transition: all 0.3s;
 }
-
 .header ul li:hover {
-  background-color: #444;
+  background-color: #5fc0ff;
 }
-
+.header ul li:active {
+  background-color: #0f4387;
+}
 .header a:hover {
   text-decoration: none;
 }
 
 .header h3 a {
   color: white;
+  transition: all 0.3s;
 }
 
 .header h3 a:hover {
-  color: #00bc8c;
+  color: #000000;
 }
