@@ -1,32 +1,34 @@
 import React, { Component } from 'react';
-
+import FetchData from '../../services/FetchData';
+import Spinner from '../Spinner';
+import ErrorIndicator from '../ErrorIndicator';
+import RenderPlanet from './RenderPlanet';
 import './RandomPlanet.css';
 
 export default class RandomPlanet extends Component {
-
+  state = {
+    planet: {},
+    loading: true,
+    error: false,
+  };
+  getData = new FetchData();
+  componentDidMount() {
+    this.fetchPlanet();
+   /*  this.timerID = setInterval(this.fetchPlanet, 3000); */
+  }
+  fetchPlanet = async () => {
+    const id = Math.round(Math.random() * 17) + 2;
+    const res = await this.getData
+      .getPlanet(id)
+      .catch(() => this.setState({ error: true }));
+    this.setState({ planet: res, loading: false });
+  };
   render() {
+    const { planet, loading, error } = this.state;
+    const content = loading ? <Spinner /> : <RenderPlanet planet={planet} />;
     return (
       <div className='random-planet jumbotron rounded'>
-        <img className='planet-image'
-          src='https://starwars-visualguide.com/assets/img/planets/5.jpg'
-          alt='planet' />
-        <div>
-          <h4>Planet Name</h4>
-          <ul className='list-group list-group-flush'>
-            <li className='list-group-item'>
-              <span className='term'>Population</span>
-              <span>123124</span>
-            </li>
-            <li className='list-group-item'>
-              <span className='term'>Rotation Period</span>
-              <span>43</span>
-            </li>
-            <li className='list-group-item'>
-              <span className='term'>Diameter</span>
-              <span>100</span>
-            </li>
-          </ul>
-        </div>
+        {error ? <ErrorIndicator /> : content}
       </div>);
   }
 }
