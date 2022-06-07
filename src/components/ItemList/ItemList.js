@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import FetchData from '../../services/FetchData';
 import Spinner from '../Spinner';
 import ErrorIndicator from '../ErrorIndicator';
 
 import './ItemList.css';
 
 export default class ItemList extends Component {
-  getData = new FetchData();
   state = {
     peopleData: null,
     loading: true,
@@ -17,16 +15,15 @@ export default class ItemList extends Component {
     this.fetchPeople();
   }
   fetchPeople = async () => {
-    const res = await this.getData
-      .getAllPeople()
-      .catch(() => this.setState({ error: true }));
-    this.setState({ peopleData: res, loading: false });
+    const { getAllData } = this.props;
+    const data = await getAllData().catch(() => this.setState({ error: true }));
+    this.setState({ peopleData: data, loading: false });
   };
   personList = (arr) => arr.map((item) => (
     <li className='list-group-item'
       onClick={() => this.props.getPerson(item)}
       key={item.id}>
-      {item.name}
+      {this.props.children(item)}
     </li>
   ));
 
