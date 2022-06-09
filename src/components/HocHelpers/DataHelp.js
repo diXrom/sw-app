@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Spinner from '../Spinner';
 import ErrorBoundry from '../ErrorBoundry';
 
-const DataHelp = (View, dataName) => {
+const DataHelp = (dataName) => (View) => {
   return class extends Component {
     state = { peopleData: null };
     fetch = this.props.FetchData;
@@ -23,4 +23,4 @@ const DataHelp = (View, dataName) => {
     }
   };
 };
-export {DataHelp};
+export { DataHelp };
