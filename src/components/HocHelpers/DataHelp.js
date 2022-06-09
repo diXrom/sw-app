@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import Spinner from '../Spinner';
 import ErrorBoundry from '../ErrorBoundry';
 
-const DataHelp = (View, getData) => {
+const DataHelp = (View, dataName) => {
   return class extends Component {
     state = { peopleData: null };
+    fetch = this.props.FetchData;
     async componentDidMount() {
-      const data = await getData();
-      
+      const data = await this.fetch[dataName]();
       this.props.getPerson(data[0]);
       this.setState({ peopleData: data });
     }
@@ -23,5 +23,4 @@ const DataHelp = (View, getData) => {
     }
   };
 };
-
-export default DataHelp;
+export {DataHelp};

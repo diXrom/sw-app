@@ -1,1 +1,2 @@
-export {default} from './DataHelp';
+export {DataHelp} from './DataHelp';
+export {FetchContext} from './FetchContext';
