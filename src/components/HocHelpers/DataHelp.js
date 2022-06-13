@@ -9,8 +9,9 @@ const DataHelp = (dataName) => (View) => {
     fetch = this.props.FetchData;
     async componentDidMount() {
       const data = await this.fetch[dataName]();
-      this.props.getPerson(data[0]);
       this.setState({ peopleData: data });
+      if (data[0].id === '2') return;
+      this.props.getPerson(data[0]);
     }
     render() {
       const { peopleData } = this.state;

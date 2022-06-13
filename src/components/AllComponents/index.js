@@ -8,7 +8,9 @@ import {
   PlanetList,
   StarshipList,
 } from './Lists';
+import { Ship } from './Ship';
 export {
+  Ship,
   PersonDetails,
   PlanetDetails,
   StarshipDetails,

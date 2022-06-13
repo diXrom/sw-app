@@ -58,10 +58,7 @@ export default class FetchData {
     return this.convertPlanet(planet);
   };
   getStarship = async (id) => {
-    const starships = await this.getData(`starships/${id}/`);
+    const starships = await this.getData(`starships/${id}`);
     return this.convertStarship(starships);
   };
-
-
 }
-/* this.getData.getImages(1, 'characters') */

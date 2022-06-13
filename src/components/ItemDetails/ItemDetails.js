@@ -10,7 +10,7 @@ const Record = ({ item, field, label }) => (
 );
 export { Record };
 export default class ItemDetails extends Component {
-  state = { item: null};
+  state = { item: null };
   componentDidUpdate(prevProps) {
     if (this.props.item === prevProps.item) return;
     this.setState({ item: this.props.item });
@@ -22,7 +22,11 @@ export default class ItemDetails extends Component {
       <div className='item-details card'>
         <img className='item-image'
           src={item.img}
-          alt='Starwars' />
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null; // prevents looping
+            currentTarget.src = 'https://via.placeholder.com/369';
+          }}
+          alt='Not Found' />
         <div className='card-body'>
           <h4>{item.name}</h4>
           <ul className='list-group list-group-flush'>

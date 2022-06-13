@@ -8,6 +8,9 @@ body {
 .jumbotron {
   background: linear-gradient(90deg, #000000 0%, #0f4387 40%, #5fc0ff 80%);
 }
+.yoda img {
+  border-radius: 10px;
+}
 /* a:hover {
   color: white;
   background: #5fc0ff;

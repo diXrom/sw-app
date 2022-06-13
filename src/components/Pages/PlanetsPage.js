@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { PersonList, PersonDetails } from '../AllComponents';
+import { PlanetList, PlanetDetails } from '../AllComponents';
 import ErrorBoundry from '../ErrorBoundry';
 import Row from '../Row';
-import './PeoplePage.css';
 
-export default class PeoplePage extends Component {
+export class PlanetsPage extends Component {
   state = { person: null };
   getPerson = (person) => this.setState({ person });
   render() {
@@ -12,8 +11,8 @@ export default class PeoplePage extends Component {
     return (
       <ErrorBoundry>
         <Row 
-          left={<PersonList getPerson={this.getPerson} />} 
-          right={<PersonDetails item={person} />} 
+          left={<PlanetList getPerson={this.getPerson} />} 
+          right={<PlanetDetails item={person} />} 
         />
       </ErrorBoundry>
     );

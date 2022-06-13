@@ -1,23 +1,19 @@
 import './Header.scss';
+import { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Header = () => {
-  return (
-    <div className='header d-flex'>
+class Header extends Component {
+  render = () => (
+    <div className='header d-flex' >
       <h3>
-        <a href='#None'>
-          Star DB
-        </a>
+        <NavLink to='/'> Star DB</NavLink>
       </h3>
       <ul className='d-flex'>
-        <li>
-          <a href='#None'>People</a>
-        </li>
-        <li>
-          <a href='#None'>Planets</a>
-        </li>
-        <li>
-          <a href='#None'>Starships</a>
-        </li>
+        <li><NavLink to='/'>People</NavLink></li>
+        <li><NavLink to='planets'>Planets</NavLink></li>
+        <li><NavLink to='starships'>Starships</NavLink></li>
+        <li><NavLink to='login'>Login</NavLink></li>
+        <li><NavLink to='secret'>Secret</NavLink></li>
       </ul>
     </div>
   );
