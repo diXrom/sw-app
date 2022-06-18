@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Spinner from '../Spinner';
 import ErrorBoundry from '../ErrorBoundry';
 
+// можно и пропстайпы было юзнуть
+
 const DataHelp = (dataName) => (View) => {
   return class extends Component {
     state = { peopleData: null };

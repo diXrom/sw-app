@@ -5,12 +5,15 @@ import ErrorIndicator from '../ErrorIndicator';
 import RenderPlanet from './RenderPlanet';
 import './RandomPlanet.css';
 
+// 2022 мы пишем на функциональных кормпонентах 
+
 export default class RandomPlanet extends Component {
   state = {
     planet: {},
     loading: true,
     error: false,
   };
+  // getData FetchData, мб как-то однообразно сделать
   getData = new FetchData();
   componentDidMount() {
     this.fetchPlanet();

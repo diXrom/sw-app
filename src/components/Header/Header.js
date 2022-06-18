@@ -2,6 +2,8 @@ import './Header.scss';
 import { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
+// функция
+
 class Header extends Component {
   render = () => (
     <div className='header d-flex' >
