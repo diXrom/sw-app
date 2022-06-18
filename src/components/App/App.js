@@ -14,6 +14,7 @@ export default class App extends Component {
   getData = new FetchData();
   onLogin = () => this.setState({ isLogin: true });
   render = () => (
+    // <>
     <React.Fragment>
       <DataProvider value={this.getData}>
         <Router>
@@ -33,6 +34,8 @@ export default class App extends Component {
         </Router>
       </DataProvider>
     </React.Fragment>
+    // < />
   );
 };
 
+// planets/ руты в объект или enum в TS

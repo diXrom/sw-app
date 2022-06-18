@@ -9,7 +9,6 @@
     "indent": ["warn", 2],
     "comma-dangle": ["warn", "always-multiline"],
     "max-len": ["warn", { "code": 120 }],
-
     "no-unused-vars": "warn",
     "no-param-reassign": "warn",
     "no-plusplus": "warn",

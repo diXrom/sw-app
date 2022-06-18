@@ -1,7 +1,13 @@
+// жесткий класс, страшно смотреть 
+// у тебя класс называется  fetchData, то есть какое-то действие
+// подумай нат тем чтобы сделать это существительным, нвапример dataAPI первое что пришло в голову
+// тогда будет логичнее так как ты будешь юзать действия на API, а не над действиями
+// плюс если ты не передаешь никакие параметры в конструктор, ты можешь сразу вернуть экземпляр из файлы FetchData
+// но в таком случае его стоит именовать с маленькой буквы
+// можно
 export default class FetchData {
   _BASE_URL = 'https://swapi.dev/api/';
   _IMG_URL = 'https://starwars-visualguide.com/assets/img/';
-
   getId = (data) => data.url.match(/\/([0-9]*)\/$/)[1];
   getImageURL = (id, type) => `${this._IMG_URL}${type}/${id}.jpg`;
   getData = async (url, base = this._BASE_URL) => {
@@ -9,6 +15,9 @@ export default class FetchData {
     if (!res.ok) throw new Error(`Could not fetch data:${res.status}`);
     return await res.json();
   };
+  // convertPlanet, convertStarship, convertPerson = одна переиспользуемая утилка ?
+  // спрес оператор , нужные для передачи в рушгире параметры значения деструктуризировать можно
+  // дублировать точно не стоит
   convertPlanet = (planet) => ({
     id: this.getId(planet),
     name: planet.name,

@@ -1,4 +1,7 @@
 import React from 'react';
+
+
+
 const RenderPlanet = ({ planet }) => {
   const { id, name, population, rotationPeriod, diameter } = planet;
   return (
@@ -8,6 +11,7 @@ const RenderPlanet = ({ planet }) => {
         alt='' />
       <div>
         <h4>{name}</h4>
+        {/* 3 почти одинаковых блока дублируются */}
         <ul className='list-group list-group-flush'>
           <li className='list-group-item'>
             <span className='term'>Population</span>
